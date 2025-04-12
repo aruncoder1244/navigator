@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Campus Navigation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #003366, #336699);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            img {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: slideDown 1s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fdd835;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fdd835;
+        }
+
+        .search-bar {
+            margin-left: 20px;
+        }
+
+        #searchInput {
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
+
+        main {
+            padding: 60px 40px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            animation: zoomIn 0.8s ease both;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fdd835;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 a {
+            color: #fdd835;
+            text-decoration: none;
+        }
+
+        h2 a:hover {
+            opacity: 0.8;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        #map {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background: #001f3f;
+            color: #bbb;
+            padding: 20px 40px;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <img src="https://media.istockphoto.com/id/690291164/photo/compass-on-the-map.jpg?s=612x612&w=0&k=20&c=wn4wSV7yBXhMPcbOJn1X9s9W1w4N_sr_7EeEE0hT7GM=" >
+    <header>
+        <div class="logo">CampusNav</div>
+        <nav>
+            <a href="#library">Library</a>
+            <a href="#labs">Labs</a>
+            <a href="#canteen">Canteen</a>
+            <a href="#hostel">Hostel</a>
+            <a href="#sports">Sports Complex</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search location...">
+        </div>
+    </header>
+
+    <main>
+        <div id="map"></div>
+
+        <section class="section" id="library">
+            <h2>Library <a href="https://www.google.com/maps?q=28.6129,77.2295&z=17" target="_blank"><i class="fas fa-map-marker-alt"></i></a></h2>
+            <p>
+                Our state-of-the-art library houses over 100,000 books, digital resources, and quiet study spaces. With extended hours and a dedicated team of librarians, it is the ideal place for research and self-study. The navigation system directs you to book sections, computer labs, group rooms, and quiet zones.
+            </p>
+        </section>
+
+        <section class="section" id="labs">
+            <h2>Science & Computer Labs <a href="https://www.google.com/maps?q=28.6135,77.2300&z=17" target="_blank"><i class="fas fa-map-marker-alt"></i></a></h2>
+            <p>
+                The labs are equipped with modern instruments and high-speed internet for real-time experimentation and coding. Navigation ensures quick access to department-specific labs such as Physics, Chemistry, Biology, and IT labs.
+            </p>
+        </section>
+
+        <section class="section" id="canteen">
+            <h2>Canteen & Cafeteria <a href="https://www.google.com/maps?q=28.6139,77.2285&z=17" target="_blank"><i class="fas fa-map-marker-alt"></i></a></h2>
+            <p>
+                Our canteen offers a variety of nutritious meals and snacks. Navigation routes include indoor seating areas, open-air lounges, and special diet zones. QR codes are placed around for menu and ordering assistance.
+            </p>
+        </section>
+
+        <section class="section" id="hostel">
+            <h2>Student Hostel <a href="https://www.google.com/maps?q=28.6145,77.2290&z=17" target="_blank"><i class="fas fa-map-marker-alt"></i></a></h2>
+            <p>
+                Safe, clean, and well-maintained hostels offer single and shared rooms, study areas, and recreation spaces. The navigation system helps new students find their rooms, common areas, and wardens’ offices.
+            </p>
+        </section>
+
+        <section class="section" id="sports">
+            <h2>Sports Complex <a href="https://www.google.com/maps?q=28.6150,77.2305&z=17" target="_blank"><i class="fas fa-map-marker-alt"></i></a></h2>
+            <p>
+                Featuring a gym, swimming pool, cricket pitch, basketball courts, and indoor games, the Sports Complex is a hub for fitness. Directions guide students to lockers, entry gates, equipment rentals, and medical aid rooms.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 CampusNav. All rights reserved.
+    </footer>
+
+    <script>
+        const locations = {
+            library: { lat: 28.6129, lng: 77.2295 },
+            labs: { lat: 28.6135, lng: 77.2300 },
+            canteen: { lat: 28.6139, lng: 77.2285 },
+            hostel: { lat: 28.6145, lng: 77.2290 },
+            sports: { lat: 28.6150, lng: 77.2305 }
+        };
+
+        let map, directionsService, directionsRenderer;
+
+        function initMap() {
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer();
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: locations.library,
+                zoom: 17,
+                mapTypeId: "satellite"
+            });
+
+            directionsRenderer.setMap(map);
+
+            for (const [name, coords] of Object.entries(locations)) {
+                const marker = new google.maps.Marker({
+                    position: coords,
+                    map,
+                    title: name.charAt(0).toUpperCase() + name.slice(1)
+                });
+
+                marker.addListener("click", () => {
+                    calculateRoute(coords);
+                });
+            }
+        }
+
+        function calculateRoute(destination) {
+            const origin = locations.library; // or use user's current location if available
+            const request = {
+                origin: origin,
+                destination: destination,
+                travelMode: 'WALKING'
+            };
+            directionsService.route(request, function(result, status) {
+                if (status == 'OK') {
+                    directionsRenderer.setDirections(result);
+                }
+            });
+        }
+
+        document.getElementById("searchInput").addEventListener("input", function() {
+            const val = this.value.toLowerCase();
+            if (locations[val]) {
+                map.setCenter(locations[val]);
+                map.setZoom(18);
+                calculateRoute(locations[val]);
+            }
+        });
+
+        const sections = document.querySelectorAll(".section");
+        const navLinks = document.querySelectorAll("nav a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.style.color = "#fdd835";
+                } else {
+                    link.style.color = "#fff";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
